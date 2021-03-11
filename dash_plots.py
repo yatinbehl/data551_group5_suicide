@@ -56,8 +56,7 @@ def plot_suicide_gdp(data, sex, country, age, year):
     df['year'] = pd.to_datetime(df['year'], format='%Y')
 
     year = pd.to_datetime(year, format= '%Y')
-    #print(year[0])
-    #print(year[1])
+    
     df = df[df['year'] > year[0]]
     df = df[df['year'] < year[1]]
 
@@ -78,12 +77,11 @@ def age_plot(country_dropdown, source, year):
     data['year'] = pd.to_datetime(data['year'], format='%Y')
 
     year = pd.to_datetime(year, format= '%Y')
-    #print(year[0])
-    #print(year[1])
+    
     #data = data_country_filter[data_country_filter['country'] == country_dropdown]
     data = data[data['year'] > year[0]]
     data = data[data['year'] < year[1]]
-    #print(data.head())
+    
 
     brush = alt.selection_interval()
     click = alt.selection_multi(fields = ['age'], bind = 'legend')
